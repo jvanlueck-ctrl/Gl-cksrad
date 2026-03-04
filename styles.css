@@ -1,0 +1,106 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #eef7ff, #dce9f7 40%, #c6d7eb);
+  color: #10223a;
+  min-height: 100vh;
+}
+
+.app {
+  width: min(940px, 95vw);
+  margin: 1.5rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.wheel-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgb(16 34 58 / 28%);
+}
+
+.pointer {
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 32px solid #10223a;
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.controls,
+.result-box,
+.log {
+  background: rgb(255 255 255 / 86%);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgb(16 34 58 / 12%);
+}
+
+.size-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.control {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+.spin-button {
+  justify-self: center;
+  border: none;
+  border-radius: 999px;
+  background: #1f6feb;
+  color: white;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer;
+}
+
+.spin-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+#resultLog {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.3rem;
+}
